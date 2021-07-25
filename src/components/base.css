@@ -1,0 +1,21 @@
+.base {
+  font-family: "Montserrat","Open Sans",sans-serif;
+  width: 75vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.upper-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  width: 100%;
+  background-color: #5c3977;
+  color: #ffffff;
+  height: 70px;
+  margin-bottom: 20px;
+}

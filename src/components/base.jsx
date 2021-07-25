@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import IncrementButton from "./increment-button"
 import Counter from "./counter"
+import Pasture from "./pasture"
 import { increaseCount, fetchCount } from "../utils";
+
+import styles from "./base.css";
 
 const Base = () => {
   const [count, setCount] = useState(0)
@@ -23,9 +26,12 @@ const Base = () => {
   }, [])
 
   return (
-    <div>
-      <IncrementButton increment={handleIncrementClick} />
-      <Counter count={count} isLoading={isLoading} />
+    <div className={styles.base}>
+      <div className={styles.upperContent}>
+        <IncrementButton increment={handleIncrementClick} />
+        <Counter count={count} isLoading={isLoading} />
+      </div>
+      <Pasture cowCount={count} />
     </div>
   );
 };

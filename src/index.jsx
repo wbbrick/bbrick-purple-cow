@@ -6,6 +6,3 @@ ReactDOM.render(
   <Base />,
   document.getElementById('root')
 );
-
-console.log("well, here we are")
-
