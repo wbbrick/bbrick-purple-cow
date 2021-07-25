@@ -6,18 +6,29 @@ module.exports = {
   entry: {
     index: './src/index.js',
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Mooooo!',
-    }),
-  ],
   devServer: {
-    contentBase: './dist',
+    port: 3000,
+    contentBase: ['./dist', './src'],
   },
   devtool: 'inline-source-map',
   output: {
-    filename: '[name].bundle.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Mooooo!',
+      templateContent: '<div id="root"></div>'
+    }),
+  ],
+
 };
