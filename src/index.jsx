@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom"
+import Base from "./components/base"
 
 ReactDOM.render(
-  <h1>Hello, <s>world</s> Fearless!</h1>,
+  <Base />,
   document.getElementById('root')
 );
 
