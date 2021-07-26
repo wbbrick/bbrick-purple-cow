@@ -11,10 +11,15 @@ const Base = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   const waitOnApiCall = async (apiCall) => {
-    setIsLoading(true);
-    const newCount = (await apiCall()).value
-    setCount(newCount)
-    setIsLoading(false)
+    try {
+      setIsLoading(true);
+      const newCount = (await apiCall()).value;
+      setCount(newCount);
+      setIsLoading(false);
+    } catch (e) {
+      // using an alert for error handling as it's a proof of concept
+      alert(e)
+    }
   }
 
   const handleIncrementClick = () => waitOnApiCall(increaseCount)
