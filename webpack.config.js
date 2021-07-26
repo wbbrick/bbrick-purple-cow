@@ -1,6 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+// default port is 3000, but it can be overwritten with an environment variable
+const PORT = process.env.PORT || 3000
+
 module.exports = {
   mode: 'development',
   entry: {
@@ -10,7 +13,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.json']
   },
   devServer: {
-    port: 3000,
+    port: PORT,
     contentBase: ['./dist', './src']
   },
   devtool: 'inline-source-map',
