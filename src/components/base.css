@@ -3,11 +3,11 @@
   width: 75vw;
   left: 0;
   right: 0;
-  margin: auto;
+  margin: 40px auto;
   text-align: center;
 }
 
-.upper-content {
+.upperContent {
   display: flex;
   flex-direction: column;
 }
