@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./counter.css"
+import styles from "./counter.css";
 
 const Counter = ({ count, isLoading }) => {
   const content = isLoading ? (
@@ -13,7 +13,7 @@ const Counter = ({ count, isLoading }) => {
       <h2 className={styles.title}>Total cows:</h2>
       {content}
     </div>
-  )
-}
+  );
+};
 
-export default Counter
+export default Counter;

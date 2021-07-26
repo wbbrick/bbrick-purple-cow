@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import IncrementButton from "./increment-button"
-import Counter from "./counter"
-import Pasture from "./pasture"
+import IncrementButton from "./increment-button";
+import Counter from "./counter";
+import Pasture from "./pasture";
 import { increaseCount, fetchCount } from "../utils";
 
 import styles from "./base.css";
 
 const Base = () => {
-  const [count, setCount] = useState(0)
-  const [isLoading, setIsLoading] = useState(false)
+  const [count, setCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   const waitOnApiCall = async (apiCall) => {
     try {
@@ -18,17 +18,17 @@ const Base = () => {
       setIsLoading(false);
     } catch (e) {
       // using an alert for error handling as it's a proof of concept
-      alert(e)
+      alert(e);
     }
   }
 
-  const handleIncrementClick = () => waitOnApiCall(increaseCount)
+  const handleIncrementClick = () => waitOnApiCall(increaseCount);
 
-  const updateCountState = () => waitOnApiCall(fetchCount)
+  const updateCountState = () => waitOnApiCall(fetchCount);
 
   useEffect(() => {
-    updateCountState()
-  }, [])
+    updateCountState();
+  }, []);
 
   return (
     <div className={styles.base}>
